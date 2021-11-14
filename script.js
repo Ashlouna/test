@@ -240,15 +240,27 @@
 // }
 
 // console.log(likes(["Alex", "Jacob"]));
-$(document).ready(function () {
-  $("input[type=text]").focus(function () {
-    $("input[type=password]").attr("disabled", "disabled");
-  });
-  $("input[type=password]").click(function (e) {
-    $("input[name=check]").each(function () {
-      var val = $(this).val();
-      alert(val);
-    });
-    e.preventdefault();
-  });
-});
+// $(document).ready(function () {
+//   $("input[type=text]").focus(function () {
+//     $("input[type=password]").attr("disabled", "disabled");
+//   });
+//   $("input[type=password]").click(function (e) {
+//     $("input[name=check]").each(function () {
+//       var val = $(this).val();
+//       alert(val);
+//     });
+//     e.preventdefault();
+//   });
+// });
+const foo = document.querySelector(".foo");
+function counter(){
+    if(foo.innerHTML == 3600) clearInterval(interval);
+    foo.innerHTML = +foo.innerHTML + 1;
+}
+const interval = setInterval(counter, 1000)
+document.addEventListener("visibilitychange", ()=>{
+    console.log("Oppa!!!");
+    foo.innerHTML = +foo.innerHTML + 300;
+
+}
+)
